@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PanierLinkComponent } from './panier-link.component';
+import {ActivatedRoute} from "@angular/router";
+import {of} from "rxjs";
 
 describe('PanierLinkComponent', () => {
   let component: PanierLinkComponent;
@@ -8,7 +10,22 @@ describe('PanierLinkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PanierLinkComponent]
+      imports: [PanierLinkComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: (key: string) => 'someValue'
+              }
+            },
+            paramMap: of({
+              get: (key: string) => 'someValue'
+            })
+          }
+        }
+      ]
     })
     .compileComponents();
 
