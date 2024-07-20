@@ -1,12 +1,14 @@
 <div class="panier__container--display">
-  <ul *ngIf="panierList" class="panier__list--styling">
-    @for (product of panierList; track product){
-      <li class="panier__item--display">
-        <app-panier-item [product]="product"></app-panier-item>
-        <button class="panier__button--styling" (click)="removeItem(product)">-</button>
-      </li>
-    }
-  </ul>
+  @if (panierList){
+    <ul class="panier__list--styling">
+      @for (product of panierList; track product){
+        <li class="panier__item--display">
+          <app-panier-item [product]="product"></app-panier-item>
+          <button class="panier__button--styling" (click)="removeItem(product)">-</button>
+        </li>
+      }
+    </ul>
+  }
   <app-total-price [panierList]="panierList"></app-total-price>
 </div>
 

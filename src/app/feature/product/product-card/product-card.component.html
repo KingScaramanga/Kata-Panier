@@ -10,12 +10,17 @@
 
   </div>
   <div class="card__footer">
-    <div class="card__quantity--styling" *ngIf="product.quantity>0">
-      <p>Quté: {{product.quantity}}</p>
-    </div>
-    <div class="card__noquantity--styling" *ngIf="product.quantity<1">
-      <p>Non disponible</p>
-    </div>
+    @if(product.quantity>0){
+      <div class="card__quantity--styling">
+        <p>Quté: {{product.quantity}}</p>
+      </div>
+    }
+    @else {
+      <div class="card__noquantity--styling">
+        <p>Non disponible</p>
+      </div>
+    }
+
     <button class="card__button--styling"
             (click)="addPanier(product)"
             [disabled]="product.quantity<1">
