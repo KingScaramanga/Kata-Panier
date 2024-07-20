@@ -1,0 +1,12 @@
+<div class="total-price__container--display" *ngIf="panierList.length>0">
+  <div class="total-price__p--styling">
+    <p>TOTAL TTC: {{calulateTotalTTCPrice() | number:'1.2-2'}}€</p>
+  </div>
+  <div class="total-price__p--styling">
+    <p>TOTAL Taxes: {{calculateTotalTaxe() | number:'1.2-2'}}€</p>
+  </div>
+</div>
+
+<div *ngIf="panierList.length<1">
+  <h2>Panier vide</h2>
+</div>

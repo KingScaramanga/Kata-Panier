@@ -1,0 +1,90 @@
+.card__container--resize{
+  width: 12vw;
+  height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .card__container--resize {
+    width: 70vw;
+  }
+}
+
+.card__header{
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.card__container--styling{
+  border: 3px solid orange;
+  background-color: rgb(243, 212, 175);
+  margin:15px 30px 15px 15px;
+  padding: 30px;
+  color: dodgerblue;
+
+  h1{
+    font-size: 26px;
+  }
+}
+
+.card__content{
+  height:15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p{
+    margin: 0 0 15px 0;
+    font-size: 24px;
+  }
+}
+
+.card__footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  .card__button--styling{
+    background-color: green;
+    border-color: transparent;
+    width: 90px;
+    margin-left: 30px;
+    border-radius: 5px;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card__button--styling:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    cursor: grab;
+  }
+
+  .card__button--styling:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grabbing;
+  }
+
+  .card__button--styling:disabled{
+    background-color: darkgray;
+  }
+
+  .card__quantity--styling{
+    border-radius: 5px;
+    border-color: dodgerblue;
+    background-color: dodgerblue;
+    width: 90px;
+    text-align: center;
+    color: black;
+  }
+
+  .card__noquantity--styling{
+    color: darkgray;
+  }
+}

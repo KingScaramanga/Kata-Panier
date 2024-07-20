@@ -1,0 +1,9 @@
+<div class="product__container">
+  <div class="product__header">
+    <app-categorie-list [categoryList]="this.categoryList"></app-categorie-list>
+    <app-panier-link></app-panier-link>
+  </div>
+  <div class="product__content">
+    <app-product-card class="product--display" *ngFor="let product of this.productService.sharedProductList" [product]="product"></app-product-card>
+  </div>
+</div>

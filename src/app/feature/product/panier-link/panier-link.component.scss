@@ -1,0 +1,15 @@
+.panier__container{
+  border: 1px solid dodgerblue;
+  padding: 15px;
+  width: 140px;
+  height: 30px;
+  text-align: center;
+
+  a{
+    margin: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: dodgerblue;
+    font-size: 18px;
+  }
+}

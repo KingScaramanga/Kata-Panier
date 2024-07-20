@@ -1,0 +1,16 @@
+
+<div class="item__container--sizing item__container--display item__container--styling">
+  <div class="item__name--display">
+    <h2 class="item__h2--restyle">{{product.productName}}</h2>
+    <p class="item__quantite--restyle">Qté: {{product.quantity}}</p>
+  </div>
+  <div class="item__price--display">
+    <p class="item__prixttc--styling">Prix unitaire TTC: {{calculatePriceTTC(product) | number:'1.2-2'}}€</p>
+    <span class="item__detailprice--display">
+      <p class="item__prixht--styling">Prix unitaire HT: {{product.price | number:'1.2-2'}}€</p>
+      <p class="item__prixht--styling">|</p>
+      <p class="item__prixht--styling">Total taxes {{calulateTotalTaxe(product) | number:'1.2-2'}}€</p>
+    </span>
+  </div>
+
+</div>

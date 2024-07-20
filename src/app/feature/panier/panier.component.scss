@@ -1,0 +1,42 @@
+.panier__container--display{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  flex-wrap: wrap;
+
+  .panier__list--styling{
+    list-style-type: none;
+    margin: 0;
+    .panier__item--display{
+      display: flex;
+      flex-direction: row;
+
+      .panier__button--styling{
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+
+        margin-top: 20px;
+        margin-left: 15px;
+        color: red;
+        border-color: red;
+        background: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .panier__container--display {
+    padding: 10px;
+  }
+  .panier__list--styling{
+    padding-inline-start: 10px;
+  }
+
+  .panier__button--styling{
+    margin-top: 12px!important;
+    margin-left: 10px!important;
+  }
+}
+

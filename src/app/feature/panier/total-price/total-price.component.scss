@@ -1,0 +1,33 @@
+.total-price__container--display{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+
+  .total-price__p--styling{
+    padding: 15px;
+    border: 1px solid dodgerblue;
+    color: dodgerblue;
+    margin-bottom: 15px;
+    background: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .total-price__container--display{
+    flex-direction: row;
+    margin-left: 10px;
+    justify-content: space-between;
+    width: 330px;
+    margin-top: 15px;
+  }
+
+  .total-price__p--styling{
+    padding: 0 10px 0 10px!important;
+    margin-right: 10px;
+    width: 120px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+}

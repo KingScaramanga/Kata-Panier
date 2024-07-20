@@ -1,0 +1,10 @@
+<div class="panier__container--display">
+  <ul *ngIf="panierList" class="panier__list--styling">
+    <li *ngFor="let product of panierList" class="panier__item--display">
+      <app-panier-item [product]="product"></app-panier-item>
+      <button class="panier__button--styling" (click)="removeItem(product)">-</button>
+    </li>
+  </ul>
+  <app-total-price [panierList]="panierList"></app-total-price>
+</div>
+
