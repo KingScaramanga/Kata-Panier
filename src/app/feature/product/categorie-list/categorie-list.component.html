@@ -1,7 +1,13 @@
 <form [formGroup]="form" class="category__container">
   <label for="categories">Filtre:</label>
-  <select id="categories" name="categories" class="select__container" formControlName="selectedOption" (change)="productService.filter(form.get('selectedOption')?.value)">
+  <select id="categories"
+          name="categories"
+          class="select__container"
+          formControlName="selectedOption"
+          (change)="productService.filter(form.get('selectedOption')?.value)">
     <option value="">Categories</option>
-    <option *ngFor="let category of categoryList" [value]="category">{{category}}</option>
+    @for (category of categoryList; track category){
+      <option [value]="category">{{category}}</option>
+    }
   </select>
 </form>

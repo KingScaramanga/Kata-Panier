@@ -4,6 +4,8 @@
     <app-panier-link></app-panier-link>
   </div>
   <div class="product__content">
-    <app-product-card class="product--display" *ngFor="let product of this.productService.sharedProductList" [product]="product"></app-product-card>
+    @for (product of this.productService.sharedProductList; track product){
+      <app-product-card class="product--display" [product]="product"></app-product-card>
+    }
   </div>
 </div>
