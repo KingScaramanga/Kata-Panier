@@ -168,7 +168,6 @@ export class DataService {
   ];
 
   panierList: BehaviorSubject<ProductDTO[]> = new BehaviorSubject<ProductDTO[]>([]);
-  panierList$ = this.panierList.asObservable();
 
   constructor() { }
 }

@@ -19,10 +19,16 @@ export class PanierLinkComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.sharedData.panierList$.subscribe(list=>{
+    this.sharedData.panierList.subscribe(list=>{
       this.panierList$=list
     });
   }
 
-
+  calculePanier() {
+    let quantity = 0
+    for( let item of this.panierList$){
+      quantity+=Number(item.quantity);
+    }
+    return quantity;
+  }
 }
