@@ -29,7 +29,13 @@
   h1{
     font-size: 22px;
     height: 50px;
+    margin: 0 0 5px 0;
   }
+}
+
+.card__category--styling{
+  font-size: 18px;
+  margin: 0;
 }
 
 .card__content{
@@ -42,6 +48,7 @@
   .card__label--styling{
     font-size: 20px;
     margin: 0;
+    font-weight: 600;
   }
 
   .card__noquantity--styling{
@@ -51,6 +58,7 @@
 
   .card__quantity--styling{
     font-size: 16px;
+    margin-top: 5px;
   }
 }
 

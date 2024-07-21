@@ -1,9 +1,9 @@
 <div class="card__container--resize card__container--styling">
   <div class="card__header">
     <h1>{{product.productName}}</h1>
+    <p class="card__category--styling">{{product.category}}</p>
   </div>
   <div class="card__content">
-      <p class="card__label--styling">Categorie: {{product.category}}</p>
       <p class="card__label--styling">Prix: {{calculatePriceTTC() | number:'1.2-2'}} €</p>
     @if(product.quantity>0){
       <p class="card__quantity--styling">Quantité restante: {{product.quantity-selectedQuantity}}</p>
