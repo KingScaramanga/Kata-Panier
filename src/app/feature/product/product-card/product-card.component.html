@@ -3,16 +3,11 @@
     <h1>{{product.productName}}</h1>
   </div>
   <div class="card__content">
-    <div>
       <p>Categorie: {{product.category}}</p>
       <p>Prix: {{calculatePriceTTC() | number:'1.2-2'}} €</p>
-    </div>
-
-  </div>
-  <div class="card__footer">
     @if(product.quantity>0){
       <div class="card__quantity--styling">
-        <p>Quté: {{product.quantity}}</p>
+        <p>Quantité restante: {{product.quantity-selectedQuantity}}</p>
       </div>
     }
     @else {
@@ -20,10 +15,24 @@
         <p>Non disponible</p>
       </div>
     }
+  </div>
+  <div class="card__footer">
+    <div class="select__container">
+      <label for="quantity">Qté:</label>
+      <select id="quantity"
+              name="quantity"
+              class="card__select--styling"
+              [(ngModel)]="selectedQuantity">
+        <option value=0>0</option>
+        @for (quantity of quantityList; track quantity){
+          <option [value]="quantity">{{quantity}}</option>
+        }
+      </select>
+    </div>
 
     <button class="card__button--styling"
             (click)="addPanier(product)"
-            [disabled]="product.quantity<1">
+            [disabled]="product.quantity<1 || selectedQuantity==0">
       Ajouter
     </button>
   </div>

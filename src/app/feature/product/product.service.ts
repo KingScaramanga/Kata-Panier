@@ -24,16 +24,17 @@ export class ProductService {
     this.sharedProductList = this.sharedDataService.dataProduct.filter(a=>a.productName.length>0);
   }
 
-  addPanier(product: ProductDTO) {
-    product.quantity--;
+  addPanier(product: ProductDTO, quantity: number) {
+    product.quantity-=quantity;
 
     const currentPanier = this.sharedDataService.panierList.value;
-    const productInPanier = currentPanier.find(item=> item.id === product.id);
+    const productInPanier = <ProductDTO>currentPanier.find(item => item.id === product.id);
 
     if (productInPanier){
-      productInPanier.quantity++;
+      productInPanier.quantity = Number(productInPanier.quantity) + Number(quantity);
+      console.log(productInPanier)
     } else{
-      const updatedPanier = [...currentPanier, copyProduct(product)];
+      const updatedPanier = [...currentPanier, copyProduct(product, quantity)];
       this.sharedDataService.panierList.next(updatedPanier);
     }
   }
