@@ -32,7 +32,6 @@ export class ProductService {
 
     if (productInPanier){
       productInPanier.quantity = Number(productInPanier.quantity) + Number(quantity);
-      console.log(productInPanier)
     } else{
       const updatedPanier = [...currentPanier, copyProduct(product, quantity)];
       this.sharedDataService.panierList.next(updatedPanier);
@@ -42,7 +41,7 @@ export class ProductService {
   removeFromPanier(product: ProductDTO) {
     const returnedProduct = this.sharedProductList.find(item=>item.id===product.id);
     if(returnedProduct){
-      returnedProduct.quantity+= product.quantity;
+      returnedProduct.quantity = Number(returnedProduct.quantity) + Number(product.quantity);
     }
   }
 }

@@ -1,21 +1,9 @@
 import {ProductDTO} from "../dto/productDTO";
-import {TAUX_LIVRE, TAUX_STANDARD, TAUX_SURTAXE} from "../constants/taux-constants";
-import {LIVRE} from "../constants/categorie-constants";
+import {TaxCalculator} from "../tax-calculator/taxCalculator";
 
 export function calculatePriceTTC(product: ProductDTO){
-  let priceTTC = product.price;
-
-  if (product.category===LIVRE){
-    priceTTC += arrondiTaxe(priceTTC * TAUX_LIVRE / 100);
-  } else{
-    priceTTC += arrondiTaxe(priceTTC * TAUX_STANDARD / 100);
-  }
-
-  if (product.isImported) {
-    priceTTC += arrondiTaxe(priceTTC * TAUX_SURTAXE / 100);
-  }
-
-  return Math.round(priceTTC * 100) / 100;
+  const taxCalculator = new TaxCalculator(product);
+  return Math.round(taxCalculator.calculate() * 100) / 100;
 }
 
 export function arrondiTaxe(taxe: number): number{
