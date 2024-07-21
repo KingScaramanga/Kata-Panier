@@ -3,18 +3,16 @@
     <h1>{{product.productName}}</h1>
   </div>
   <div class="card__content">
-      <p>Categorie: {{product.category}}</p>
-      <p>Prix: {{calculatePriceTTC() | number:'1.2-2'}} €</p>
+      <p class="card__label--styling">Categorie: {{product.category}}</p>
+      <p class="card__label--styling">Prix: {{calculatePriceTTC() | number:'1.2-2'}} €</p>
     @if(product.quantity>0){
-      <div class="card__quantity--styling">
-        <p>Quantité restante: {{product.quantity-selectedQuantity}}</p>
-      </div>
+      <p class="card__quantity--styling">Quantité restante: {{product.quantity-selectedQuantity}}</p>
+
     }
     @else {
-      <div class="card__noquantity--styling">
-        <p>Non disponible</p>
-      </div>
+        <p class="card__noquantity--styling">Non disponible</p>
     }
+
   </div>
   <div class="card__footer">
     <div class="select__container">

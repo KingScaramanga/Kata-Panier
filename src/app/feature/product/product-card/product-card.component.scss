@@ -38,9 +38,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  p{
+
+  .card__label--styling{
     font-size: 20px;
     margin: 0;
+  }
+
+  .card__noquantity--styling{
+    color: darkgray!important;
+    font-weight: 600;
+  }
+
+  .card__quantity--styling{
+    font-size: 16px;
   }
 }
 
@@ -76,10 +86,6 @@
 
   .card__button--styling:disabled{
     background-color: darkgray;
-  }
-
-  .card__noquantity--styling{
-    color: darkgray;
   }
 
   .select__container{

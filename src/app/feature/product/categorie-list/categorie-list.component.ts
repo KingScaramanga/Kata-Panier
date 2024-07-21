@@ -24,8 +24,6 @@ export class CategorieListComponent implements OnInit{
     });
   }
   ngOnInit(): void {
-    this.form.get('selectedOption')?.valueChanges.subscribe(value => {
-      console.log('Selected Value:', value);
-    });
+    this.form.get('selectedOption')?.valueChanges.subscribe();
   }
 }
